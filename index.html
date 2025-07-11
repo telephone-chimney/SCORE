@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Simple Scoreboard</title>
     <!-- Tailwind CSS CDN for easy styling without local installation -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,6 +19,9 @@
             padding: 0; /* No padding to allow sections to fill space */
             box-sizing: border-box;
             overflow: hidden; /* Prevent any scrollbars for a clean full-screen look */
+            /* Ensure content extends into safe areas on iOS */
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-top: env(safe-area-inset-top);
         }
 
         /* Main container for the two score sections (red and blue) */
@@ -35,7 +38,7 @@
             flex-direction: column; /* Stack score and button vertically within each section */
             justify-content: space-between; /* Pushes score to top, button to bottom */
             align-items: center; /* Center content horizontally */
-            padding: 5px; /* Further reduced padding for more content space */
+            padding: 0px; /* Reduced padding to give maximum space for content */
             cursor: pointer; /* Indicate clickable area for incrementing score */
             transition: background-color 0.1s ease-in-out; /* Smooth color transition on click */
             user-select: none; /* Prevent text selection when clicking rapidly */
@@ -83,7 +86,7 @@
             align-items: center;
             cursor: pointer; /* Indicate clickable */
             transition: background-color 0.1s, transform 0.1s; /* Smooth hover and active effects */
-            margin-bottom: 5px; /* Further reduced margin to give more space */
+            margin-bottom: 5px; /* Reduced margin to give more space */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
             flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
         }
@@ -106,7 +109,7 @@
                 border-bottom: 2px solid white; /* Add bottom border for separation */
             }
             .score-section {
-                padding: 2px; /* Even smaller padding on very small screens */
+                padding: 0px; /* Even smaller padding on very small screens */
             }
             .decrement-button {
                 width: 35px; /* Smaller button size */
