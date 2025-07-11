@@ -35,7 +35,7 @@
             flex-direction: column; /* Stack score and button vertically */
             justify-content: space-between; /* Pushes score to top, button to bottom */
             align-items: center; /* Center content horizontally */
-            padding: 20px; /* Some internal padding around content */
+            padding: 10px; /* Reduced padding to give more space for content */
             cursor: pointer; /* Indicate clickable area for incrementing score */
             transition: background-color 0.1s ease-in-out; /* Smooth color transition on click */
             user-select: none; /* Prevent text selection when clicking rapidly */
@@ -56,7 +56,7 @@
         /* Score display (the large number itself) */
         .score-display {
             /* Dynamically scales font size based on viewport dimensions for maximum visibility */
-            font-size: min(55vw, 70vh);
+            font-size: min(65vw, 85vh); /* Adjusted for larger overall fit */
             font-weight: bold; /* Bold font for clear readability */
             color: white; /* White digits for high contrast */
             text-shadow: none; /* No text shadow for a flat, clean look */
@@ -83,7 +83,7 @@
             align-items: center;
             cursor: pointer; /* Indicate clickable */
             transition: background-color 0.1s, transform 0.1s; /* Smooth hover and active effects */
-            margin-bottom: 20px; /* Space from the bottom edge of the score section */
+            margin-bottom: 10px; /* Reduced margin to give more space */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
             flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
         }
@@ -98,15 +98,18 @@
 
         /* Responsive adjustments for smaller screens (e.g., mobile phones) */
         @media (max-width: 480px) {
+            .score-section {
+                padding: 5px; /* Even smaller padding on very small screens */
+            }
             .decrement-button {
-                width: 45px; /* Smaller button size */
-                height: 45px;
-                font-size: 1.8rem; /* Smaller font for '-' symbol */
-                margin-bottom: 10px; /* Reduced bottom margin */
+                width: 40px; /* Smaller button size */
+                height: 40px;
+                font-size: 1.6rem; /* Smaller font for '-' symbol */
+                margin-bottom: 5px; /* Reduced bottom margin */
             }
             .score-display {
                 /* Adjust font size for smaller screens, prioritizing viewport width */
-                font-size: min(70vw, 60vh);
+                font-size: min(85vw, 75vh); /* Made more aggressive for mobile */
             }
         }
     </style>
