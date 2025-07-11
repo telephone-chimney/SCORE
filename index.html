@@ -23,16 +23,16 @@
 
         /* Main container for the two score sections (red and blue) */
         .main-scoreboard-container {
-            display: flex;
+            display: flex; /* Default to horizontal layout */
             width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height, no extra elements below */
+            height: 100vh; /* Full viewport height */
         }
 
         /* Individual score section (red or blue block) */
         .score-section {
-            flex: 1; /* Each section takes equal width, making them side-by-side */
+            flex: 1; /* Each section takes equal width/height depending on flex-direction */
             display: flex;
-            flex-direction: column; /* Stack score and button vertically */
+            flex-direction: column; /* Stack score and button vertically within each section */
             justify-content: space-between; /* Pushes score to top, button to bottom */
             align-items: center; /* Center content horizontally */
             padding: 10px; /* Reduced padding to give more space for content */
@@ -45,7 +45,7 @@
         /* Styling for the red section */
         .red-section {
             background-color: #FF0000; /* Pure Red color */
-            border-right: 2px solid white; /* White line between red and blue sections */
+            border-right: 2px solid white; /* White line between red and blue sections in horizontal layout */
         }
 
         /* Styling for the blue section */
@@ -98,7 +98,14 @@
         }
 
         /* Responsive adjustments for smaller screens (e.g., mobile phones) */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) { /* Apply these styles for screens up to 768px wide (typical phone portrait) */
+            .main-scoreboard-container {
+                flex-direction: column; /* Stack sections vertically */
+            }
+            .red-section {
+                border-right: none; /* Remove right border when stacked vertically */
+                border-bottom: 2px solid white; /* Add bottom border for separation */
+            }
             .score-section {
                 padding: 5px; /* Even smaller padding on very small screens */
             }
@@ -110,7 +117,14 @@
             }
             .score-display {
                 /* Adjust font size for smaller screens, prioritizing viewport width or height */
-                font-size: min(95vw, 85vh); /* Made more aggressive for mobile */
+                /* When stacked vertically, height is more constrained, so let it use more width */
+                font-size: min(95vw, 45vh); /* More aggressive for mobile portrait */
+            }
+        }
+        /* Further adjustments for very narrow screens */
+        @media (max-width: 480px) {
+            .score-display {
+                font-size: min(98vw, 40vh); /* Even more aggressive for very narrow phones */
             }
         }
     </style>
