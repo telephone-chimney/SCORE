@@ -56,7 +56,8 @@
         /* Score display (the large number itself) */
         .score-display {
             /* Dynamically scales font size based on viewport dimensions for maximum visibility */
-            font-size: min(65vw, 85vh); /* Adjusted for larger overall fit */
+            /* Prioritize filling the smaller dimension (either width or height) more aggressively */
+            font-size: min(90vw, 90vh); /* Adjusted for better fitting in both orientations */
             font-weight: bold; /* Bold font for clear readability */
             color: white; /* White digits for high contrast */
             text-shadow: none; /* No text shadow for a flat, clean look */
@@ -108,8 +109,8 @@
                 margin-bottom: 5px; /* Reduced bottom margin */
             }
             .score-display {
-                /* Adjust font size for smaller screens, prioritizing viewport width */
-                font-size: min(85vw, 75vh); /* Made more aggressive for mobile */
+                /* Adjust font size for smaller screens, prioritizing viewport width or height */
+                font-size: min(95vw, 85vh); /* Made more aggressive for mobile */
             }
         }
     </style>
