@@ -35,7 +35,7 @@
             flex-direction: column; /* Stack score and button vertically within each section */
             justify-content: space-between; /* Pushes score to top, button to bottom */
             align-items: center; /* Center content horizontally */
-            padding: 10px; /* Reduced padding to give more space for content */
+            padding: 5px; /* Further reduced padding for more content space */
             cursor: pointer; /* Indicate clickable area for incrementing score */
             transition: background-color 0.1s ease-in-out; /* Smooth color transition on click */
             user-select: none; /* Prevent text selection when clicking rapidly */
@@ -56,7 +56,6 @@
         /* Score display (the large number itself) */
         .score-display {
             /* Dynamically scales font size based on viewport dimensions for maximum visibility */
-            /* Prioritize filling the smaller dimension (either width or height) more aggressively */
             font-size: min(90vw, 90vh); /* Adjusted for better fitting in both orientations */
             font-weight: bold; /* Bold font for clear readability */
             color: white; /* White digits for high contrast */
@@ -84,7 +83,7 @@
             align-items: center;
             cursor: pointer; /* Indicate clickable */
             transition: background-color 0.1s, transform 0.1s; /* Smooth hover and active effects */
-            margin-bottom: 10px; /* Reduced margin to give more space */
+            margin-bottom: 5px; /* Further reduced margin to give more space */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
             flex-shrink: 0; /* Prevents the button from shrinking on smaller screens */
         }
@@ -107,24 +106,24 @@
                 border-bottom: 2px solid white; /* Add bottom border for separation */
             }
             .score-section {
-                padding: 5px; /* Even smaller padding on very small screens */
+                padding: 2px; /* Even smaller padding on very small screens */
             }
             .decrement-button {
-                width: 40px; /* Smaller button size */
-                height: 40px;
-                font-size: 1.6rem; /* Smaller font for '-' symbol */
-                margin-bottom: 5px; /* Reduced bottom margin */
+                width: 35px; /* Smaller button size */
+                height: 35px;
+                font-size: 1.4rem; /* Smaller font for '-' symbol */
+                margin-bottom: 2px; /* Reduced bottom margin */
             }
             .score-display {
                 /* Adjust font size for smaller screens, prioritizing viewport width or height */
                 /* When stacked vertically, height is more constrained, so let it use more width */
-                font-size: min(95vw, 45vh); /* More aggressive for mobile portrait */
+                font-size: min(95vw, 40vh); /* More aggressive for mobile portrait */
             }
         }
         /* Further adjustments for very narrow screens */
         @media (max-width: 480px) {
             .score-display {
-                font-size: min(98vw, 40vh); /* Even more aggressive for very narrow phones */
+                font-size: min(98vw, 35vh); /* Even more aggressive for very narrow phones */
             }
         }
     </style>
